@@ -1,0 +1,36 @@
+* { margin: 0; padding: 0; }
+.slider {
+  display: block;
+  height: 400px;
+  width: 1000px;
+  margin: auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+    div {
+      margin: auto;
+      height: 100%;
+      width: 100%;
+
+      &.controller {
+        height: 100px;
+        width: 100%;
+        background-color: gray;
+        position: fixed;
+      }
+    }
+
+    .slider1 {
+      background-color: green;
+      display: inline-block;
+    }
+    .slider2 {
+      background-color: black;
+      display: inline-block;
+    }
+    .slider3 {
+      background-color: yellow;
+      display: inline-block;
+    }
+}
