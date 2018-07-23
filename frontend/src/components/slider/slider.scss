@@ -1,36 +1,79 @@
 * { margin: 0; padding: 0; }
-.slider {
-  display: block;
+.slider-show{
   height: 400px;
   width: 1000px;
   margin: auto;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
+}
+.slider {
+  display: block;
+  height: 400px;
+  width: 100%;
+  margin: auto;
   white-space: nowrap;
+  position: relative;
 
-    div {
-      margin: auto;
-      height: 100%;
+  div {
+    margin: auto;
+    height: 100%;
+    width: 100%;
+
+    &.controller {
+      height: 100px;
       width: 100%;
+      background-color: gray;
+      position: fixed;
+    }
+  }
+}
 
-      &.controller {
-        height: 100px;
-        width: 100%;
-        background-color: gray;
-        position: fixed;
-      }
-    }
+.slider1 {
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  background-color: green;
+  display: inline-block;
+}
+.slider2 {
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  display: inline-block;
+}
+.slider3 {
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  background-color: yellow;
+  display: inline-block;
+}
 
-    .slider1 {
-      background-color: green;
-      display: inline-block;
-    }
-    .slider2 {
-      background-color: black;
-      display: inline-block;
-    }
-    .slider3 {
-      background-color: yellow;
-      display: inline-block;
-    }
+.animation-enter{
+  transform: translateX(-100%);
+  transition: all 300ms ease-out;
+  // animation-name: example;
+  // animation-duration: 2s;
+  // animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes example {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-50%);
+    /* 50% of container @ 200% */
+  }
+}
+
+/* Standard syntax */
+@keyframes example {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-100%);
+    /* 50% of container @ 200% */
+  }
 }

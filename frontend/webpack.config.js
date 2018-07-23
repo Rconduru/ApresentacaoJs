@@ -14,7 +14,11 @@ module.exports = function(){
     },
     mode: 'development',
     resolve: {
-      extensions: ['.js', '.jsx']
+      extensions: ['.js', '.jsx'],
+      alias: {
+          modules: __dirname + '/node_modules',
+          fontAwesome: 'modules/font-awesome/css/font-awesome.min.css'
+      }
     },
     module:{
       rules:[
@@ -38,6 +42,10 @@ module.exports = function(){
           }, {
             loader: "sass-loader" // compiles Sass to CSS
           }]
+        },
+        {
+          test: /\.woff|.woff2|.ttf|.eot|.svg|.png|.jpg*.*$/,
+          loader: 'file-loader'
         }
       ]
     }
