@@ -25,11 +25,10 @@ export default class Controller extends Component {
   }
 
   render(){
-    console.log(this.state);
     return (
       <div className="controller">
-        <button type="button" onClick={this.previousSlide} disabled={this.state.atualSlide == 1} className="left-navigation"><i className="fa fa-angle-left"></i></button>
-        <button type="button" onClick={this.nextSlide} disabled={this.state.atualSlide == this.state.size} className="right-navigation"><i className="fa fa-angle-right"></i></button>
+        <button type="button" onClick={this.previousSlide} disabled={this.state.atualSlide == 1} className="previous-navigation"><i className="fa fa-angle-left"></i></button>
+        <button type="button" onClick={this.nextSlide} disabled={this.state.atualSlide == this.state.size} className="next-navigation"><i className="fa fa-angle-right"></i></button>
       </div>
     )
   }

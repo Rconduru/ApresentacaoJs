@@ -4,15 +4,15 @@ import Controller from '../controller'
 import styled from 'styled-components';
 
 const SliderShow = styled.div`
-  height: 400px;
-  width: 1000px;
+  height: 100vh;
+  width: 100%;
   margin: auto;
   overflow: hidden;
 `;
 
 const SliderFrame = styled.div`
   display: block;
-  height: 400px;
+  height: 100vh;
   width: 100%;
   margin: auto;
   white-space: nowrap;
