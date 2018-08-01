@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './slider.scss'
 import Controller from '../controller'
 import styled from 'styled-components';
+import Slide1 from '../slide'
 
 const SliderShow = styled.div`
   height: 100vh;
@@ -33,8 +34,15 @@ export default class Slider extends Component {
   handleForward() {
     this.setState({sliderTranslate: this.state.sliderTranslate + 100});
   }
+
   handleBackward() {
     this.setState({sliderTranslate: this.state.sliderTranslate - 100});
+  }
+
+  renderChildren(){
+    return (
+      this.props.children
+    )
   }
 
   render() {
@@ -42,12 +50,10 @@ export default class Slider extends Component {
       <div>
         <SliderShow>
           <SliderFrame optionSlider={this.state.sliderTranslate}>
-            <div className="slider1"></div>
-            <div className="slider2"></div>
-            <div className="slider3"></div>
+            {this.renderChildren()}
           </SliderFrame>
         </SliderShow>
-        <Controller handleBackward={this.handleBackward} handleForward={this.handleForward} size={3}/>
+        <Controller handleBackward={this.handleBackward} handleForward={this.handleForward} size={this.props.children.length}/>
       </div>
     )
   }

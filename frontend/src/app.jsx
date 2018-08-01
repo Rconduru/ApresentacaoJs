@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Slider from './components/slider'
+import Presentation from './components/reactPresentation'
 
 ReactDOM.render(
-    <Slider/>
+    <Presentation/>
 , document.getElementById('apresentacaoJs'))

@@ -10,7 +10,6 @@ const SlideDiv = styled.div`
     return imgLoader(props.imgName)
   }});
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-position: center;
   display: inline-block;
 `;
