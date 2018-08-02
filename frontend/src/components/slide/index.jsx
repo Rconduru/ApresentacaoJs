@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
-import imgLoader from '../../helpers/imgloader'
+import imgLoader from '../../helpers/imgLoader'
 
 const SlideDiv = styled.div`
   margin: auto;
