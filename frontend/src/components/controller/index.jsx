@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 import './controller.scss'
 import 'fontAwesome'
 import { w3cwebsocket as WebSocketClient} from 'websocket'
+import websocketAddress from '../../helpers/websocketAddress'
 
 export default class Controller extends Component {
   constructor(props){
     super(props)
 
-    const client = new WebSocketClient('ws://192.168.1.133:1337');
+    const client = new WebSocketClient(websocketAddress());
 
     client.onopen = function() {
         console.log('WebSocket Client Connected');
