@@ -29,8 +29,8 @@ Você precisará das seguintes tecnologias para instalar em seu computador
 
 ### Rodando os projetos
 
-* Na paste`backend`
+### Na paste`backend`
 - `node server.js`
 
-* Na pasta `frontend`
+###Na pasta `frontend`
 - `npm run dev`
