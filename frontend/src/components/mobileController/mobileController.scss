@@ -1,0 +1,30 @@
+.mobile-controller {
+  .touch-space {
+    width: 100%;
+    height: 70vh;
+    background-color: white;
+  }
+
+  .button-space {
+    width: 100%;
+    height: 20vh;
+    background-color: gray;
+
+    button {
+      -webkit-appearance: none;
+      -webkit-border-radius: 0;
+      width: 50%;
+      height: 100%;
+      font-size: 100px;
+      cursor: pointer;
+
+      &.previous-navigation {
+        float:left;
+      }
+
+      &.next-navigation {
+        float:right;
+      }
+    }
+  }
+}

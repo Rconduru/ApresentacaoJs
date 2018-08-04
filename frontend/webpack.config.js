@@ -10,7 +10,8 @@ module.exports = function(){
     },
     devServer: {
       port:8083,
-      contentBase:'./dist'
+      contentBase:'./dist',
+      historyApiFallback: true
     },
     mode: 'development',
     resolve: {

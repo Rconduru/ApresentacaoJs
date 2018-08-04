@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Presentation from './components/reactPresentation'
+import Router from "./router";
 
 ReactDOM.render(
-    <Presentation/>
+  <Router />
 , document.getElementById('apresentacaoJs'))

@@ -1,13 +1,29 @@
 import React, { Component } from 'react'
 import './controller.scss'
 import 'fontAwesome'
+import { w3cwebsocket as WebSocketClient} from 'websocket'
 
 export default class Controller extends Component {
   constructor(props){
     super(props)
+
+    const client = new WebSocketClient('ws://192.168.1.133:1337');
+
+    client.onopen = function() {
+        console.log('WebSocket Client Connected');
+    }
+    client.onmessage = (e) => {
+      if (typeof e.data === 'string') {
+
+        let command =JSON.parse(e.data).command
+        command === 'next' ? this.nextSlide() : this.previousSlide()
+      }
+    };
+
     this.state = {
       size: props.size ? props.size : 0,
-      atualSlide: 1
+      atualSlide: 1,
+      client: client
     }
 
     this.nextSlide = this.nextSlide.bind(this)
@@ -15,13 +31,17 @@ export default class Controller extends Component {
   }
 
   nextSlide(){
-    this.setState( prevState => ({ atualSlide: prevState.atualSlide + 1 }) )
-    this.props.handleForward()
+    if(this.state.atualSlide != this.state.size){
+      this.setState( prevState => ({ atualSlide: prevState.atualSlide + 1 }) )
+      this.props.handleForward()
+    }
   }
 
   previousSlide(){
-    this.setState( prevState => ({ atualSlide: prevState.atualSlide - 1 }) )
-    this.props.handleBackward()
+    if(this.state.atualSlide > 1){
+      this.setState( prevState => ({ atualSlide: prevState.atualSlide - 1 }) )
+      this.props.handleBackward()
+    }
   }
 
   render(){
